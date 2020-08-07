@@ -41,7 +41,6 @@ download:
 	# make data directories
 	mkdir -p $(DATADIR)
 	mkdir -p beginner_source/data
-	mkdir -p prototype_source/data
 
 	# transfer learning tutorial data
 	wget -N https://download.pytorch.org/tutorial/hymenoptera_data.zip -P $(DATADIR)
@@ -50,10 +49,6 @@ download:
 	# data loader tutorial
 	wget -N https://download.pytorch.org/tutorial/faces.zip -P $(DATADIR)
 	unzip $(ZIPOPTS) $(DATADIR)/faces.zip -d beginner_source/data/
-
-	wget -N https://download.pytorch.org/models/tutorials/4000_checkpoint.tar -P $(DATADIR)
-	cp $(DATADIR)/4000_checkpoint.tar beginner_source/data/
-
 
 	# Download dataset for beginner_source/hybrid_frontend/introduction_to_hybrid_frontend_tutorial.py
 	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/iris.data -P $(DATADIR)
@@ -66,14 +61,6 @@ download:
 	# Download model for beginner_source/fgsm_tutorial.py
 	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/lenet_mnist_model.pth -P $(DATADIR)
 	cp $(DATADIR)/lenet_mnist_model.pth ./beginner_source/data/lenet_mnist_model.pth
-
-	# Download model for prototype_source/graph_mode_static_quantization_tutorial.py
-	wget -N https://download.pytorch.org/models/resnet18-5c106cde.pth -P $(DATADIR)
-	cp $(DATADIR)/resnet18-5c106cde.pth prototype_source/data/resnet18_pretrained_float.pth
-
-	# Download dataset for prototype_source/graph_mode_static_quantization_tutorial.py
-	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/imagenet_1k.zip -P $(DATADIR)
-	unzip $(ZIPOPTS) $(DATADIR)/imagenet_1k.zip -d prototype_source/data/
 
 docs:
 	make download
