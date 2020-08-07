@@ -58,10 +58,6 @@ download:
 	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/cornell_movie_dialogs_corpus.zip -P $(DATADIR)
 	unzip $(ZIPOPTS) $(DATADIR)/cornell_movie_dialogs_corpus.zip -d beginner_source/data/
 
-	# Download model for beginner_source/fgsm_tutorial.py
-	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/lenet_mnist_model.pth -P $(DATADIR)
-	cp $(DATADIR)/lenet_mnist_model.pth ./beginner_source/data/lenet_mnist_model.pth
-
 docs:
 	make download
 	make html
