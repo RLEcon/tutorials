@@ -42,10 +42,6 @@ download:
 	mkdir -p $(DATADIR)
 	mkdir -p beginner_source/data
 
-	# transfer learning tutorial data
-	wget -N https://download.pytorch.org/tutorial/hymenoptera_data.zip -P $(DATADIR)
-	unzip $(ZIPOPTS) $(DATADIR)/hymenoptera_data.zip -d beginner_source/data/
-
 	# data loader tutorial
 	wget -N https://download.pytorch.org/tutorial/faces.zip -P $(DATADIR)
 	unzip $(ZIPOPTS) $(DATADIR)/faces.zip -d beginner_source/data/
