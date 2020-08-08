@@ -1,5 +1,6 @@
 # Minimal makefile for Sphinx documentation
 #
+## REMOVE CIFAR10_TUTORIAL
 
 # Locale
 export LC_ALL=C
@@ -49,10 +50,6 @@ download:
 	# Download dataset for beginner_source/hybrid_frontend/introduction_to_hybrid_frontend_tutorial.py
 	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/iris.data -P $(DATADIR)
 	cp $(DATADIR)/iris.data beginner_source/data/
-
-	# Download dataset for beginner_source/chatbot_tutorial.py
-	wget -N https://s3.amazonaws.com/pytorch-tutorial-assets/cornell_movie_dialogs_corpus.zip -P $(DATADIR)
-	unzip $(ZIPOPTS) $(DATADIR)/cornell_movie_dialogs_corpus.zip -d beginner_source/data/
 
 docs:
 	make download
